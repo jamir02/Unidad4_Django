@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'app_portafolio/estilo_create.css'%}">
+  <title>Formulario Registro</title>
+</head>
+<body>
+  <section class="form-register">
+    <h4>Ingresa tus datos</h4>
+    <form method="post" action="{%url 'app_portafolio:create_new_user'%}"> <!-- Se crea un formulario para que el usuario introduzca toda la información para crear usuario -->
+      {% csrf_token %}
+      <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+      <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+      <input class="controls" type="text" name="dni" id="dni" placeholder="Ingrese su DNI">
+      <input class="controls" type="text" name="usuarios" id="usuarios" placeholder="Ingrese su Nuevo Usuario">
+      <input class="controls" type="password" name="contraseña" id="contraseña" placeholder="Ingrese su Nueva Contraseña">
+      <input class="controls" type="text" name="fotoperfil" id="fotoperfil" placeholder="Ingrese URL de su foto de perfil">
+      <input class="controls" type="text" name="urlgithub" id="url github" placeholder="Ingrese URL de su Github">
+      <input class="controls" type="text" name="foto_proy1" id="foto_proy1" placeholder="Ingrese URL de la imagen del proyecto 1">
+      <input class="controls" type="text" name="titulo_proy1" id="titulo_proy1" placeholder="Ingrese el título del proyecto 1">
+      <input class="controls" type="text" name="descrip_proy1" id="descrip_proy1" placeholder="Ingrese la descripción del proyecto 1">
+      <input class="controls" type="text" name="foto_proy2" id="foto_proy2" placeholder="Ingrese URL de la imagen del proyecto 2">
+      <input class="controls" type="text" name="titulo_proy2" id="titulo_proy2" placeholder="Ingrese el título del proyecto 2">
+      <input class="controls" type="text" name="descrip_proy2" id="descrip_proy2" placeholder="Ingrese la descripción del proyecto 2">
+      <input class="controls" type="text" name="foto_proy3" id="foto_proy3" placeholder="Ingrese URL de la imagen del proyecto 3">
+      <input class="controls" type="text" name="titulo_proy3" id="titulo_proy3" placeholder="Ingrese el título del proyecto 3">
+      <input class="controls" type="text" name="descrip_proy3" id="descrip_proy3" placeholder="Ingrese la descripción del proyecto 3">
+
+    <!--<p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>-->
+      <button class="botons" type="submit">Registrar</button> 
+    </form>
+    <p><a href="{% url 'app_portafolio:index' %}">¿Ya tengo Cuenta?</a></p>
+  </section>
+
+</body>
+</html>
