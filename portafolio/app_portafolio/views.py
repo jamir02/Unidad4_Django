@@ -91,4 +91,5 @@ def portafolio_usuario (request):
         'lista_proyectos2': lista_proyectos2
     })
 
+
     
