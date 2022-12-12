@@ -91,5 +91,16 @@ def portafolio_usuario (request):
         'lista_proyectos2': lista_proyectos2
     })
 
+def crear_proyecto(request):
+
+    if request.method == "POST":
+        foto_proy_n= request.POST.get('foto_proy_n') 
+        titulo_proy_n= request.POST.get('titulo_proy_n') 
+        descrip_proy_n= request.POST.get('descrip_proy_n')
+
+        proyectos(dni_1=str(DNI_usuario), foto_proy=str(foto_proy_n),titulo_proy=str(titulo_proy_n),descrip_proy=str(descrip_proy_n)).save()
+
+    return render(request, "app_portafolio/crear_proyecto.html")
+
 
     

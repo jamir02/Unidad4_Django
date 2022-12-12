@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'app_portafolio/estilo_create.css'%}">
+  <title>Formulario Proyecto</title>
+</head>
+<body>
+  <section class="form-register">
+    <h4>Ingresa los datos de tu nuevo proyecto</h4>
+    <form method="post" action="{%url 'app_portafolio:crear_proyecto'%}"> <!-- Se crea un formulario para que el usuario introduzca toda la información para crear usuario -->
+      {% csrf_token %}
+      <input class="controls" type="text" name="foto_proy_n" id="foto_proy_n" placeholder="Ingrese URL de la imagen de tu nuevo proyecto">
+      <input class="controls" type="text" name="titulo_proy_n" id="titulo_proy_n" placeholder="Ingrese el título de tu nuevo proyecto">
+      <input class="controls" type="text" name="descrip_proy_n" id="descrip_proy_n" placeholder="Ingrese la descripción de tu nuevo proyecto">
+
+    <!--<p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>-->
+      <button class="botons" type="submit">Registrar nuevo proyecto</button> 
+
+    </form>
+    <p><a href="{% url 'app_portafolio:portafolio_usuario' %}">Volver al portafolio</a></p>
+  </section>
+
+</body>
+</html>
